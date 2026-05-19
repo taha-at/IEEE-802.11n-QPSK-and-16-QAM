@@ -232,12 +232,12 @@ function [EbN0_dB, BER, bits_hat] = adaptive_QAM_sim(channel_type, show_plot, bi
         % ==============================
 
         figure;
-
         Nplot = min(5000, length(z_last));
         plot(real(z_last(1:Nplot)), imag(z_last(1:Nplot)), '.');
-
         grid on;
-
+        axis([-5 5 -5 5]); % Sets the fixed limit layout from -5 to 5
+        xlabel('In-Phase');
+        ylabel('Quadrature');
         title('Received Constellation');
     end
 end
